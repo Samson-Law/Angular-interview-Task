@@ -1,0 +1,18 @@
+<div class="githubSearchContainer">
+  <div class="searchBox">
+    <app-search-box (searchEvent)="handleSearch($event)"></app-search-box>
+  </div>
+  <div class="searchResult">
+    <div class="loading" *ngIf="loading$ | async">Loading...</div>
+    <ng-container *ngIf="!(error$ | async)">
+      <ng-container *ngIf="results$ | async as results">
+        <app-search-result-list
+          [results]="results.items"
+        ></app-search-result-list>
+      </ng-container>
+    </ng-container>
+  </div>
+  <div *ngIf="error$ | async as errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+</div>

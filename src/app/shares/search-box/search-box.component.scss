@@ -1,0 +1,19 @@
+.searchBoxContainer {
+  mat-form-field {
+    position: relative;
+    width: 100%;
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: unset;
+    border: unset;
+  }
+
+  .error-message {
+    transform: translateY(-6px);
+  }
+}

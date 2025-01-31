@@ -1,0 +1,35 @@
+<div
+  class="searchResultListContainer"
+  *ngIf="results && results.length > 0; else noResults"
+>
+  <mat-list>
+    <mat-list-item *ngFor="let result of results">
+      <mat-card class="result-card">
+        <mat-card-header>
+          <div mat-card-avatar class="header-icon">
+            <img
+              [src]="result.owner.avatar_url"
+              alt="{{ result.owner.login }}'s avatar"
+            />
+          </div>
+          <mat-card-title>{{ result.name }}</mat-card-title>
+          <mat-card-subtitle>{{ result.owner.login }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p><strong>Stars:</strong> {{ result.stargazers_count }}</p>
+          <p><strong>Forks:</strong> {{ result.forks_count }}</p>
+          <p><strong>Language:</strong> {{ result.language }}</p>
+          <p><strong>Updated:</strong> {{ result.updated_at | date }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <a mat-button color="primary" [href]="result.html_url" target="_blank"
+            >View on GitHub</a
+          >
+        </mat-card-actions>
+      </mat-card>
+    </mat-list-item>
+  </mat-list>
+</div>
+<ng-template #noResults>
+  <div class="noResults">No results found.</div>
+</ng-template>

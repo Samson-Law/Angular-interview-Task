@@ -1,0 +1,54 @@
+.searchResultListContainer {
+  padding: 15px;
+  .result-card {
+    margin: 10px 0;
+  }
+
+  .mat-mdc-card-header-text {
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  mat-list mat-list-item {
+    height: auto !important;
+  }
+  mat-card {
+    margin: 10px;
+    background-color: #f9f9f9;
+  }
+
+  mat-card-title {
+    font-size: 18px;
+    display: inline;
+  }
+
+  mat-card-subtitle {
+    font-size: 12px;
+    color: #b3aaaa;
+    margin-top: 5px;
+  }
+
+  mat-card-content {
+    font-size: 14px;
+  }
+
+  mat-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+  }
+
+  .mat-mdc-card-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  @media (max-width: 600px) {
+    .repo-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
